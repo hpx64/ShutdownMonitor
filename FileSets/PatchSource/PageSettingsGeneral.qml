@@ -70,14 +70,14 @@ MbPage
 		MbItemValue {
 			description: qsTr("Remote support tunnel")
 			item.value: remotePort.item.valid && remotePort.item.value !== 0 ? qsTr("Online") : qsTr("Offline")
-			show: remoteSupportOnOff.item.value
+			show: remoteSupportOnOff.item.value === 1
 		}
 
 		MbItemValue {
 			id: remotePort
 			description: qsTr("Remote support IP and port")
 			item.bind: "com.victronenergy.settings/Settings/System/RemoteSupportIpAndPort"
-			show: remoteSupportOnOff.item.value
+			show: remoteSupportOnOff.item.value === 1
 		}
 
 		MbOK {
@@ -90,7 +90,7 @@ MbPage
 			}
 		}
 
-//////// add for Shutdown command
+		// add for Shutdown command
 		MbSubMenu
 		{
 			description: qsTr("Shutdown")
