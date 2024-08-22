@@ -91,8 +91,7 @@ MbPage
 		}
 
 		// add for Shutdown command
-		MbSubMenu
-		{
+		MbSubMenu {
 			description: qsTr("Shutdown")
 			subpage: Component { PageSettingsShutdown {} }
 			property VBusItem shutdownItem: VBusItem { bind: Utils.path("com.victronenergy.shutdown", "/Shutdown") }
